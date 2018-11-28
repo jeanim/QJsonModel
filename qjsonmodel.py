@@ -189,7 +189,7 @@ class QJsonModel(QtCore.QAbstractItemModel):
         if role == QtCore.Qt.EditRole:
             if index.column() == 1:
                 item = index.internalPointer()
-                item.value = str(value)
+                item.value = value
 
                 if __binding__ in ("PySide", "PyQt4"):
                     self.dataChanged.emit(index, index)
